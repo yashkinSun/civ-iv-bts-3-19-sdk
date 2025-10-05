@@ -1661,9 +1661,11 @@ void CvGame::normalizeAddExtras()
                 int iCount = 0;
 				int iFeatureCount = 0;
 				int aiShuffle[NUM_CITY_PLOTS];
+				int iJ;
+				int iK;
 				shuffleArray(aiShuffle, NUM_CITY_PLOTS, getMapRand());
 
-				for (int iJ = 0; iJ < NUM_CITY_PLOTS; iJ++)
+				for (iJ = 0; iJ < NUM_CITY_PLOTS; iJ++)
 				{
 					if (GET_PLAYER((PlayerTypes)iI).AI_foundValue(pStartingPlot->getX_INLINE(), pStartingPlot->getY_INLINE(), -1, true) >= iTargetValue)
 					{
@@ -1681,7 +1683,7 @@ void CvGame::normalizeAddExtras()
 								{
 									if (pLoopPlot->getFeatureType() == NO_FEATURE)
 									{
-										for (int iK = 0; iK < GC.getNumFeatureInfos(); iK++)
+										for (iK = 0; iK < GC.getNumFeatureInfos(); iK++)
 										{
 											if ((GC.getFeatureInfo((FeatureTypes)iK).getYieldChange(YIELD_FOOD) + GC.getFeatureInfo((FeatureTypes)iK).getYieldChange(YIELD_PRODUCTION)) > 0)
 											{
@@ -1706,7 +1708,7 @@ void CvGame::normalizeAddExtras()
 				int iOceanFoodCount = 0;
 				int iOtherCount = 0;
 				int iWaterCount = 0;
-				for (int iJ = 0; iJ < NUM_CITY_PLOTS; iJ++)
+				for (iJ = 0; iJ < NUM_CITY_PLOTS; iJ++)
 				{
 					CvPlot* pLoopPlot = plotCity(pStartingPlot->getX_INLINE(), pStartingPlot->getY_INLINE(), iJ);
 					if (pLoopPlot != NULL)
@@ -1743,7 +1745,7 @@ void CvGame::normalizeAddExtras()
                 
                 shuffleArray(aiShuffle, NUM_CITY_PLOTS, getMapRand());                
 
-				for (int iJ = 0; iJ < NUM_CITY_PLOTS; iJ++)
+				for (iJ = 0; iJ < NUM_CITY_PLOTS; iJ++)
 				{
 				    CvPlot* pLoopPlot = plotCity(pStartingPlot->getX_INLINE(), pStartingPlot->getY_INLINE(), aiShuffle[iJ]);
 
@@ -1771,7 +1773,7 @@ void CvGame::normalizeAddExtras()
 								{
 									if (pLoopPlot->getBonusType() == NO_BONUS)
 									{
-										for (int iK = 0; iK < GC.getNumBonusInfos(); iK++)
+										for (iK = 0; iK < GC.getNumBonusInfos(); iK++)
 										{
 											if (GC.getBonusInfo((BonusTypes)iK).isNormalize())
 											{
@@ -1806,7 +1808,7 @@ void CvGame::normalizeAddExtras()
 												{
 												pLoopPlot->setFeatureType(NO_FEATURE);
 
-													for (int iK = 0; iK < GC.getNumBonusInfos(); iK++)
+													for (iK = 0; iK < GC.getNumBonusInfos(); iK++)
 													{
 														if (GC.getBonusInfo((BonusTypes)iK).isNormalize())
 														{
@@ -1838,7 +1840,7 @@ void CvGame::normalizeAddExtras()
 				
 				shuffleArray(aiShuffle, NUM_CITY_PLOTS, getMapRand());
 
-				for (int iJ = 0; iJ < NUM_CITY_PLOTS; iJ++)
+				for (iJ = 0; iJ < NUM_CITY_PLOTS; iJ++)
 				{
 					if (GET_PLAYER((PlayerTypes)iI).AI_foundValue(pStartingPlot->getX_INLINE(), pStartingPlot->getY_INLINE(), -1, true) >= iTargetValue)
 					{
@@ -1855,7 +1857,7 @@ void CvGame::normalizeAddExtras()
 							{
 								if (pLoopPlot->getFeatureType() == NO_FEATURE)
 								{
-									for (int iK = 0; iK < GC.getNumFeatureInfos(); iK++)
+									for (iK = 0; iK < GC.getNumFeatureInfos(); iK++)
 									{
 										if ((GC.getFeatureInfo((FeatureTypes)iK).getYieldChange(YIELD_FOOD) + GC.getFeatureInfo((FeatureTypes)iK).getYieldChange(YIELD_PRODUCTION)) > 0)
 										{
@@ -1874,7 +1876,7 @@ void CvGame::normalizeAddExtras()
 				
 				int iHillsCount = 0;
 				
-				for (int iJ = 0; iJ < NUM_CITY_PLOTS; iJ++)
+				for (iJ = 0; iJ < NUM_CITY_PLOTS; iJ++)
 				{
 					CvPlot* pLoopPlot =plotCity(pStartingPlot->getX_INLINE(), pStartingPlot->getY_INLINE(), iJ);
 					if (pLoopPlot != NULL)
@@ -1886,7 +1888,7 @@ void CvGame::normalizeAddExtras()
 					}
 				}
 				shuffleArray(aiShuffle, NUM_CITY_PLOTS, getMapRand());
-				for (int iJ = 0; iJ < NUM_CITY_PLOTS; iJ++)
+				for (iJ = 0; iJ < NUM_CITY_PLOTS; iJ++)
 				{
 					if (iHillsCount >= 3)
 					{
